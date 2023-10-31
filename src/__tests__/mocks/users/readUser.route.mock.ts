@@ -1,6 +1,7 @@
 import { DeepPartial, Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
-import { User } from '../../../entities';
+import User from '../../../entities/Users.entity';
+
 
 type iUserRepo = Repository<User>;
 type iUserDeepPartial = DeepPartial<User>;

@@ -1,6 +1,9 @@
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
-import { Address, Category, RealEstate } from '../../../entities';
+import Address from '../../../entities/Addresses.entity';
+import Category from '../../../entities/Categories.entity';
+import RealEstate from '../../../entities/RealEstates.entity';
+
 
 type iCategoryRepo = Repository<Category>;
 type iRealEstateRepo = Repository<RealEstate>;
