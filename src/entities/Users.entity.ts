@@ -23,10 +23,10 @@ export default class User {
     createdAt: string
 
     @UpdateDateColumn({ type: 'date' })
-    updateAt: string
+    updatedAt: string
     
     @DeleteDateColumn({ type: 'date', nullable: true })
-    deleteAt: string | null
+    deletedAt: string | null
     
     @OneToMany(()=> Schedule, (schedules) => schedules.user)
     schedules: Schedule[]

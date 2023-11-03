@@ -11,6 +11,8 @@ export type UserUpdate = DeepPartial<UserBodyUpdate>
 
 export type UserReturn = z.infer<typeof userReturnSchema>
 
+export type UserReadReturn =  UserReturn []
+
 export type UserLogin = z.infer<typeof userLoginSchema>
 
 export type LoginReturn = {token: string}

@@ -31,7 +31,6 @@ describe('POST /users', () => {
     const response = await supertest(app)
       .post(baseUrl)
       .send(createUserRouteMock.userComplete);
-
     const { password, ...bodyEqual } = createUserRouteMock.userComplete;
     const expectResults = {
       status: 201,

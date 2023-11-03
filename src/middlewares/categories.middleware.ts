@@ -7,16 +7,16 @@ export const verifyUniqueCategorieName = async (req: Request, res: Response, nex
     const {name} = req.body
     const categorie: Category | null = await categoriesRepo.findOneBy({name})
     
-    if(categorie) throw new AppError('Categorie alread exists', 409)
+    if(categorie) throw new AppError('Category already exists', 409)
 
     return next()
 }
 
 export const verifyCategorieExists = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const {id} = req.body
+    const {id} = req.params
     const categorie: Category | null = await categoriesRepo.findOneBy({id: Number(id)})
     
-    if(!categorie) throw new AppError('Categorie not found', 404)
+    if(!categorie) throw new AppError('Category not found', 404)
 
     return next()
 }

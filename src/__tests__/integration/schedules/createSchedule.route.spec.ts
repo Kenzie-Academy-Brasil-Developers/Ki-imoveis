@@ -2,7 +2,6 @@ import supertest from 'supertest';
 import { DataSource, DeepPartial } from 'typeorm';
 import app from '../../../app';
 import { AppDataSource } from '../../../data-source';
-import { RealEstate, Schedule, User } from '../../../entities';
 import {
   createScheduleRouteMock,
   createUserRouteMock,
@@ -10,6 +9,9 @@ import {
   readRealEstateRouteMock,
   tokenMock,
 } from '../../mocks';
+import RealEstate from '../../../entities/RealEstates.entity';
+import Schedule from '../../../entities/Schedules.entity';
+import User from '../../../entities/Users.entity';
 
 describe('POST /schedules', () => {
   let connection: DataSource;

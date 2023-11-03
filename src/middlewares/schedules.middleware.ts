@@ -12,7 +12,7 @@ export const verifyRealEstateExists = async (req: Request, res: Response, next: 
     }
   })
 
-  if(!realEstate) throw new AppError('realEstate not found', 404)
+  if(!realEstate) throw new AppError('RealEstate not found', 404)
 
   return next()
 }
@@ -28,9 +28,9 @@ export const verifyRealEstateSchedulesExists = async (req: Request, res: Respons
             date
         }
     })
-    if(schedules) throw new AppError('Scheduling to this real estate at this date and time already exists', 409)
+    if(schedules) throw new AppError('Schedule to this real estate at this date and time already exists', 409)
 
-    next()
+    return next()
 }
 
 export const verifyUserSchedulesExists = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -47,7 +47,7 @@ export const verifyUserSchedulesExists = async (req: Request, res: Response, nex
       },
     })
   
-    if(schedule) throw new AppError('User scheduling to this real estate at this date and time already exists', 409)
+    if(schedule) throw new AppError('User schedule to this real estate at this date and time already exists', 409)
   
     return next()
   }

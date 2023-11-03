@@ -2,8 +2,11 @@ import supertest from 'supertest';
 import { DataSource } from 'typeorm';
 import app from '../../../app';
 import { AppDataSource } from '../../../data-source';
-import { Address, Category, RealEstate } from '../../../entities';
+
 import { createRealEstateRouteMock, errorsMock, tokenMock } from '../../mocks';
+import Address from '../../../entities/Addresses.entity';
+import Category from '../../../entities/Categories.entity';
+import RealEstate from '../../../entities/RealEstates.entity';
 
 describe('POST /realEstate', () => {
   let connection: DataSource;

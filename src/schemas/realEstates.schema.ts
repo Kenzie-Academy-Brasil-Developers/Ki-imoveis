@@ -1,9 +1,10 @@
 import { z } from "zod";
+import RealEstate from "../entities/RealEstates.entity";
 
 export const realEstateSchema = z.object({
     id: z.number().positive(),
     value:  z.string().or(z.number()).default(0),
-    size: z.number().int(),
+    size: z.number().int().positive(),
     address: z.object({
         street: z.string().max(45),
         zipCode: z.string().max(8),

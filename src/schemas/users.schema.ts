@@ -8,7 +8,7 @@ export const userSchema = z.object({
     admin: z.boolean().default(false),
     createdAt: z.string(),
     updatedAt: z.string(),
-    deleteAt: z.string().nullable()
+    deletedAt: z.string().nullable()
 })
 
 export const createUserSchema = userSchema.pick({
@@ -25,7 +25,9 @@ export const updateUserSchema = userWithoutAdmin.partial()
 
 export const userReturnSchema = userSchema.omit({password: true})
 
-export const userReadScheam = userReturnSchema.array()
+export const userReturnListSchema = userReturnSchema.array()
+
+export const userReadSchema = userReturnSchema.array()
 
 export const userLoginSchema = userSchema.pick({
     email: true,

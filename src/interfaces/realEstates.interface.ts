@@ -9,3 +9,4 @@ export type CreateRealEstate = z.infer<typeof createRealEstateSchema>
 export type RealEstateRepo = Repository<RealEstate>
 
 export type AddressRepo = Repository<Address>
+
